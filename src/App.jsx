@@ -1,21 +1,38 @@
 import './App.css'
+import { CareerGraph } from './components/CareerGraph'
+import { PensumProvider, usePensum } from './context/PensumContext'
+import { pensum_completo } from './data/pensum.json'
 
 function App() {
-  let aproveCredits = 0
-  let totalCredits = 0
+  const pensumData = pensum_completo
+  const { getApprovedCredits } = usePensum()
+
+
+  const totalCredits = Object
+    .values(pensumData)
+    .reduce((sumCredits, semester) => (
+      sumCredits + semester['total_uc']
+    ), 0)
+
+
+  const totalSubjects = Object
+    .values(pensumData)
+    .reduce((sumSubjects, semester) => (
+      sumSubjects + semester['materias'].length
+    ), 0)
+
+
+
+  let aproveCredits = getApprovedCredits()
   let aproveSubjects = 0
-  let totalSubjects = 0
 
   return (
     <>
-      <h1>Titutlo</h1>
+      <h1>Progreso de la carrera</h1>
       <h2>Creditos aprobados: {aproveCredits} / {totalCredits} </h2>
       <h2>Materias aprobadas: {aproveSubjects} / {totalSubjects} </h2>
 
-      <div>
-        ...
-      </div>
-
+      <CareerGraph data={pensumData} />
     </>
   )
 }

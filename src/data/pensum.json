@@ -118,6 +118,7 @@
       ]
     },
     "semestre_10": {
+      "total_uc": 30,
       "materias": [
         { "codigo": "74130", "nombre": "ENTRENAMIENTO INDUSTRIAL DE SISTEMAS", "UC": 30, "requisitos": ["HABER APROBADO TODAS LAS ASIGNATURAS ANTERIORES"] }
       ]
