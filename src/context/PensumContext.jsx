@@ -1,11 +1,15 @@
-import { createContext, useState, useMemo } from 'react'
+import { useContext, createContext, useState, useMemo } from 'react'
 import { SUBJECT_STATES } from '../constants/subjectStates'
-import { useContext } from 'react'
+import { loadSubjectStates, saveSubjectStates } from '../utils/storage'
+import { useEffect } from 'react'
 
 const PensumContext = createContext()
 
 export function PensumProvider({ children, pensumData }) {
-  const [subjectStates, setSubjectStates] = useState({})
+  const [subjectStates, setSubjectStates] = useState(() => {
+    const saved = loadSubjectStates()
+    return saved || {}
+  })
 
   const subjectsByCode = useMemo(() => {
     const subjectsMap = {}
@@ -22,6 +26,11 @@ export function PensumProvider({ children, pensumData }) {
     return subjectsMap
   }, [pensumData])
 
+  useEffect(() => {
+    if (Object.keys(subjectStates).length > 0) {
+      saveSubjectStates(subjectStates)
+    }
+  }, [subjectStates])
 
   const getApprovedCredits = () => {
     let totalCredits = 0
