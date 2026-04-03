@@ -15,7 +15,7 @@ export function PensumProvider({ children, pensumData }) {
     const subjectsMap = {}
 
     if (pensumData) {
-      Object.values(pensumData).forEach(semester => {
+      Object.values(pensumData['semestres']).forEach(semester => {
         semester['materias'].forEach(subject => {
           if (subject.codigo) {
             subjectsMap[subject.codigo] = subject

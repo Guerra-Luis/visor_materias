@@ -5,7 +5,7 @@ export function CareerGraph({ data }) {
   return (
     <>
       {
-        Object.entries(data).map((semester, index) => (
+        Object.entries(data['semestres']).map((semester, index) => (
           <>
             <Semester semesterData={semester} key={index} />
           </>

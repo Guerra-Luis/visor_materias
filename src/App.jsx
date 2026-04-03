@@ -9,14 +9,14 @@ function App() {
 
 
   const totalCredits = Object
-    .values(pensumData)
+    .values(pensumData['semestres'])
     .reduce((sumCredits, semester) => (
       sumCredits + semester['total_uc']
     ), 0)
 
 
   const totalSubjects = Object
-    .values(pensumData)
+    .values(pensumData['semestres'])
     .reduce((sumSubjects, semester) => (
       sumSubjects + semester['materias'].length
     ), 0)
