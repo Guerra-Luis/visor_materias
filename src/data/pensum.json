@@ -3,103 +3,403 @@
     "semestre_1": {
       "total_uc": 17,
       "materias": [
-        { "codigo": "11015", "nombre": "MATEMÁTICA I", "UC": 5, "requisitos": null },
-        { "codigo": "14012", "nombre": "DIBUJO I", "UC": 2, "requisitos": null },
-        { "codigo": "21012", "nombre": "INGLES I", "UC": 2, "requisitos": null },
+        {
+          "codigo": "11015",
+          "nombre": "MATEMÁTICA I",
+          "UC": 5,
+          "requisitos": null
+        },
+        {
+          "codigo": "14012",
+          "nombre": "DIBUJO I",
+          "UC": 2,
+          "requisitos": null
+        },
+        {
+          "codigo": "21012",
+          "nombre": "INGLES I",
+          "UC": 2,
+          "requisitos": null
+        },
         { "codigo": "13013", "nombre": "QUÍMICA", "UC": 3, "requisitos": null },
-        { "codigo": "22012", "nombre": "LENGUAJE Y COMUNICACIÓN I", "UC": 2, "requisitos": null },
+        {
+          "codigo": "22012",
+          "nombre": "LENGUAJE Y COMUNICACIÓN I",
+          "UC": 2,
+          "requisitos": null
+        },
         { "codigo": "11052", "nombre": "LOGICA", "UC": 2, "requisitos": null },
-        { "codigo": "26211", "nombre": "EDUCACIÓN FÍSICA DE BASE", "UC": 1, "requisitos": null }
+        {
+          "codigo": "26211",
+          "nombre": "EDUCACIÓN FÍSICA DE BASE",
+          "UC": 1,
+          "requisitos": null
+        }
       ]
     },
     "semestre_2": {
       "total_uc": 20,
       "materias": [
-        { "codigo": "11025", "nombre": "MATEMÁTICA II", "UC": 5, "requisitos": ["11015"] },
-        { "codigo": "12014", "nombre": "FÍSICA I", "UC": 4, "requisitos": ["11015"] },
-        { "codigo": "12031", "nombre": "LABORATORIO DE FÍSICA I", "UC": 1, "requisitos": ["P(12014)"] },
-        { "codigo": "13021", "nombre": "LABORATORIO DE QUÍMICA", "UC": 1, "requisitos": ["13013"] },
-        { "codigo": "51012", "nombre": "TECNOLOGÍA DE MATERIALES", "UC": 2, "requisitos": ["13013", "P(12014)"] },
-        { "codigo": "21022", "nombre": "INGLES II", "UC": 2, "requisitos": ["21012"] },
-        { "codigo": "14022", "nombre": "DIBUJO II", "UC": 2, "requisitos": ["14012"] },
-        { "codigo": "22022", "nombre": "LENGUAJE Y COMUNICACIÓN II", "UC": 2, "requisitos": ["22012"] },
-        { "codigo": null, "nombre": "DEPORTES I", "UC": 1, "requisitos": ["26211"] }
+        {
+          "codigo": "11025",
+          "nombre": "MATEMÁTICA II",
+          "UC": 5,
+          "requisitos": ["11015"]
+        },
+        {
+          "codigo": "12014",
+          "nombre": "FÍSICA I",
+          "UC": 4,
+          "requisitos": ["11015"]
+        },
+        {
+          "codigo": "12031",
+          "nombre": "LABORATORIO DE FÍSICA I",
+          "UC": 1,
+          "requisitos": ["P(12014)"]
+        },
+        {
+          "codigo": "13021",
+          "nombre": "LABORATORIO DE QUÍMICA",
+          "UC": 1,
+          "requisitos": ["13013"]
+        },
+        {
+          "codigo": "51012",
+          "nombre": "TECNOLOGÍA DE MATERIALES",
+          "UC": 2,
+          "requisitos": ["13013", "P(12014)"]
+        },
+        {
+          "codigo": "21022",
+          "nombre": "INGLES II",
+          "UC": 2,
+          "requisitos": ["21012"]
+        },
+        {
+          "codigo": "14022",
+          "nombre": "DIBUJO II",
+          "UC": 2,
+          "requisitos": ["14012"]
+        },
+        {
+          "codigo": "22022",
+          "nombre": "LENGUAJE Y COMUNICACIÓN II",
+          "UC": 2,
+          "requisitos": ["22012"]
+        },
+        {
+          "codigo": null,
+          "nombre": "DEPORTES I",
+          "UC": 1,
+          "requisitos": ["26211"]
+        }
       ]
     },
     "semestre_3": {
       "total_uc": 20,
       "materias": [
-        { "codigo": "11034", "nombre": "MATEMATICA III", "UC": 4, "requisitos": ["11025"] },
-        { "codigo": "12024", "nombre": "FÍSICA II", "UC": 4, "requisitos": ["12014", "12031", "11025"] },
-        { "codigo": "12041", "nombre": "LABORATORIO DE FISICA II", "UC": 1, "requisitos": ["P(12024)"] },
-        { "codigo": "41514", "nombre": "SISTEMAS ELÉCTRICOS I", "UC": 4, "requisitos": ["P(12041)", "P(12024)", "34 U.C.A."] },
-        { "codigo": "41521", "nombre": "LABORATORIO DE SISTEMAS ELÉCTRICOS I", "UC": 1, "requisitos": ["P(41514)", "34 U.C.A."] },
-        { "codigo": "46513", "nombre": "PROGRAMACIÓN DIGITAL", "UC": 3, "requisitos": ["P(11034)", "11052"] },
-        { "codigo": "33103", "nombre": "ESTADÍSTICAS Y PROBABILIDADES", "UC": 3, "requisitos": ["11025"] }
+        {
+          "codigo": "11034",
+          "nombre": "MATEMATICA III",
+          "UC": 4,
+          "requisitos": ["11025"]
+        },
+        {
+          "codigo": "12024",
+          "nombre": "FÍSICA II",
+          "UC": 4,
+          "requisitos": ["12014", "12031", "11025"]
+        },
+        {
+          "codigo": "12041",
+          "nombre": "LABORATORIO DE FISICA II",
+          "UC": 1,
+          "requisitos": ["P(12024)"]
+        },
+        {
+          "codigo": "41514",
+          "nombre": "SISTEMAS ELÉCTRICOS I",
+          "UC": 4,
+          "requisitos": ["P(12041)", "P(12024)", "34 U.C.A."]
+        },
+        {
+          "codigo": "41521",
+          "nombre": "LABORATORIO DE SISTEMAS ELÉCTRICOS I",
+          "UC": 1,
+          "requisitos": ["P(41514)", "34 U.C.A."]
+        },
+        {
+          "codigo": "46513",
+          "nombre": "PROGRAMACIÓN DIGITAL",
+          "UC": 3,
+          "requisitos": ["P(11034)", "11052"]
+        },
+        {
+          "codigo": "33103",
+          "nombre": "ESTADÍSTICAS Y PROBABILIDADES",
+          "UC": 3,
+          "requisitos": ["11025"]
+        }
       ]
     },
     "semestre_4": {
       "total_uc": 20,
       "materias": [
-        { "codigo": "11044", "nombre": "MATEMÁTICA IV", "UC": 4, "requisitos": ["11034"] },
-        { "codigo": "53014", "nombre": "MECANICA RACIONAL", "UC": 4, "requisitos": ["11034", "12014", "12031"] },
-        { "codigo": "41534", "nombre": "SISTEMAS ELÉCTRICOS II", "UC": 4, "requisitos": ["11034", "41514", "41521", "12024"] },
-        { "codigo": "41541", "nombre": "LABORATORIO DE SISTEMAS ELÉCTRICOS II", "UC": 1, "requisitos": ["P(41534)"] },
-        { "codigo": "45514", "nombre": "SISTEMAS ELECTRÓNICOS I", "UC": 4, "requisitos": ["41514", "41521"] },
-        { "codigo": "45521", "nombre": "LABORATORIO DE SISTEMAS ELECTRÓNICOS I", "UC": 1, "requisitos": ["P(45514)"] },
-        { "codigo": "32012", "nombre": "INFORMES INDUSTRIALES", "UC": 2, "requisitos": ["57 U.C.A.", "22022"] }
+        {
+          "codigo": "11044",
+          "nombre": "MATEMÁTICA IV",
+          "UC": 4,
+          "requisitos": ["11034"]
+        },
+        {
+          "codigo": "53014",
+          "nombre": "MECANICA RACIONAL",
+          "UC": 4,
+          "requisitos": ["11034", "12014", "12031"]
+        },
+        {
+          "codigo": "41534",
+          "nombre": "SISTEMAS ELÉCTRICOS II",
+          "UC": 4,
+          "requisitos": ["11034", "41514", "41521", "12024"]
+        },
+        {
+          "codigo": "41541",
+          "nombre": "LABORATORIO DE SISTEMAS ELÉCTRICOS II",
+          "UC": 1,
+          "requisitos": ["P(41534)"]
+        },
+        {
+          "codigo": "45514",
+          "nombre": "SISTEMAS ELECTRÓNICOS I",
+          "UC": 4,
+          "requisitos": ["41514", "41521"]
+        },
+        {
+          "codigo": "45521",
+          "nombre": "LABORATORIO DE SISTEMAS ELECTRÓNICOS I",
+          "UC": 1,
+          "requisitos": ["P(45514)"]
+        },
+        {
+          "codigo": "32012",
+          "nombre": "INFORMES INDUSTRIALES",
+          "UC": 2,
+          "requisitos": ["57 U.C.A.", "22022"]
+        }
       ]
     },
     "semestre_5": {
       "total_uc": 20,
       "materias": [
-        { "codigo": "42513", "nombre": "SISTEMAS DIGITALES I", "UC": 3, "requisitos": ["P(45534)", "46513"] },
-        { "codigo": "42521", "nombre": "LABORATORIO DE SISTEMAS DIGITALES I", "UC": 1, "requisitos": ["P(42513)", "46513"] },
-        { "codigo": "52243", "nombre": "FLUIDOS", "UC": 3, "requisitos": ["53014", "13021"] },
-        { "codigo": "43514", "nombre": "SISTEMAS DE CONTROL I", "UC": 4, "requisitos": ["11044", "41534", "41541"] },
-        { "codigo": "41553", "nombre": "CONVERTIDORES ELÉCTRICOS", "UC": 3, "requisitos": ["11044", "41534", "41541"] },
-        { "codigo": "41561", "nombre": "LABORATORIO DE CONVERTIDORES ELÉCTRICOS", "UC": 1, "requisitos": ["P(41553)"] },
-        { "codigo": "45534", "nombre": "SISTEMAS ELECTRÓNICOS II", "UC": 4, "requisitos": ["11044", "45514", "45521"] },
-        { "codigo": "45541", "nombre": "LABORATORIO DE SISTEMAS ELECTRÓNICOS II", "UC": 1, "requisitos": ["P(45534)"] }
+        {
+          "codigo": "42513",
+          "nombre": "SISTEMAS DIGITALES I",
+          "UC": 3,
+          "requisitos": ["P(45534)", "46513"]
+        },
+        {
+          "codigo": "42521",
+          "nombre": "LABORATORIO DE SISTEMAS DIGITALES I",
+          "UC": 1,
+          "requisitos": ["P(42513)", "46513"]
+        },
+        {
+          "codigo": "52243",
+          "nombre": "FLUIDOS",
+          "UC": 3,
+          "requisitos": ["53014", "13021"]
+        },
+        {
+          "codigo": "43514",
+          "nombre": "SISTEMAS DE CONTROL I",
+          "UC": 4,
+          "requisitos": ["11044", "41534", "41541"]
+        },
+        {
+          "codigo": "41553",
+          "nombre": "CONVERTIDORES ELÉCTRICOS",
+          "UC": 3,
+          "requisitos": ["11044", "41534", "41541"]
+        },
+        {
+          "codigo": "41561",
+          "nombre": "LABORATORIO DE CONVERTIDORES ELÉCTRICOS",
+          "UC": 1,
+          "requisitos": ["P(41553)"]
+        },
+        {
+          "codigo": "45534",
+          "nombre": "SISTEMAS ELECTRÓNICOS II",
+          "UC": 4,
+          "requisitos": ["11044", "45514", "45521"]
+        },
+        {
+          "codigo": "45541",
+          "nombre": "LABORATORIO DE SISTEMAS ELECTRÓNICOS II",
+          "UC": 1,
+          "requisitos": ["P(45534)"]
+        }
       ]
     },
     "semestre_6": {
       "total_uc": 19,
       "materias": [
-        { "codigo": "42533", "nombre": "SISTEMAS DIGITALES II", "UC": 3, "requisitos": ["42513", "42521", "45534"] },
-        { "codigo": "42541", "nombre": "LABORATORIO DE SISTEMAS DIGITALES II", "UC": 1, "requisitos": ["P(42533)"] },
-        { "codigo": "43523", "nombre": "INSTRUMENTACIÓN INDUSTRIAL", "UC": 3, "requisitos": ["52243", "43514"] },
-        { "codigo": "43531", "nombre": "LABORATORIO DE INSTRUMENTACIÓN INDUSTRIAL", "UC": 1, "requisitos": ["P(43523)"] },
-        { "codigo": "43545", "nombre": "MODELAJE Y SIMULACIÓN DIGITAL", "UC": 5, "requisitos": ["43514", "46513"] },
-        { "codigo": "45553", "nombre": "ELECTRÓNICA INDUSTRIAL", "UC": 3, "requisitos": ["45534", "45541", "42513", "41553", "41561"] },
-        { "codigo": "45561", "nombre": "LABORATORIO DE ELECTRÓNICA INDUSTRIAL", "UC": 1, "requisitos": ["P(45553)"] },
-        { "codigo": "23022", "nombre": "METODOLOGÍA DE LA INVESTIGACION", "UC": 2, "requisitos": ["33103"] }
+        {
+          "codigo": "42533",
+          "nombre": "SISTEMAS DIGITALES II",
+          "UC": 3,
+          "requisitos": ["42513", "42521", "45534"]
+        },
+        {
+          "codigo": "42541",
+          "nombre": "LABORATORIO DE SISTEMAS DIGITALES II",
+          "UC": 1,
+          "requisitos": ["P(42533)"]
+        },
+        {
+          "codigo": "43523",
+          "nombre": "INSTRUMENTACIÓN INDUSTRIAL",
+          "UC": 3,
+          "requisitos": ["52243", "43514"]
+        },
+        {
+          "codigo": "43531",
+          "nombre": "LABORATORIO DE INSTRUMENTACIÓN INDUSTRIAL",
+          "UC": 1,
+          "requisitos": ["P(43523)"]
+        },
+        {
+          "codigo": "43545",
+          "nombre": "MODELAJE Y SIMULACIÓN DIGITAL",
+          "UC": 5,
+          "requisitos": ["43514", "46513"]
+        },
+        {
+          "codigo": "45553",
+          "nombre": "ELECTRÓNICA INDUSTRIAL",
+          "UC": 3,
+          "requisitos": ["45534", "45541", "42513", "41553", "41561"]
+        },
+        {
+          "codigo": "45561",
+          "nombre": "LABORATORIO DE ELECTRÓNICA INDUSTRIAL",
+          "UC": 1,
+          "requisitos": ["P(45553)"]
+        },
+        {
+          "codigo": "23022",
+          "nombre": "METODOLOGÍA DE LA INVESTIGACION",
+          "UC": 2,
+          "requisitos": ["33103"]
+        }
       ]
     },
     "semestre_7": {
       "total_uc": 21,
       "materias": [
-        { "codigo": "42553", "nombre": "SISTEMAS DIGITALES III", "UC": 3, "requisitos": ["42533", "42541"] },
-        { "codigo": "42561", "nombre": "LABORATORIO DE SISTEMAS DIGITALES III", "UC": 1, "requisitos": ["P(42553)"] },
-        { "codigo": "46523", "nombre": "PROCESAMIENTO DE DATOS", "UC": 3, "requisitos": ["96 U.C.A.", "46513", "43545"] },
-        { "codigo": "43554", "nombre": "SISTEMAS DE CONTROL II", "UC": 4, "requisitos": ["43523", "43531", "43545", "45534"] },
-        { "codigo": "43561", "nombre": "LABORATORIO DE SISTEMAS DE CONTROL II", "UC": 1, "requisitos": ["P(43554)"] },
-        { "codigo": "44513", "nombre": "SISTEMAS DE SEÑALES", "UC": 3, "requisitos": ["11044", "96 U.C.A."] },
-        { "codigo": "34052", "nombre": "ELEMENTOS DE ECONOMIA", "UC": 2, "requisitos": ["100 U.C.A."] },
-        { "codigo": "21032", "nombre": "INGLES III", "UC": 2, "requisitos": ["97 U.C.A.", "21022"] },
-        { "codigo": "24022", "nombre": "PROBLEMÁTICA DEL DESARROLLO SOCIAL Y ECONOMICO", "UC": 2, "requisitos": ["22022", "96 U.C.A."] }
+        {
+          "codigo": "42553",
+          "nombre": "SISTEMAS DIGITALES III",
+          "UC": 3,
+          "requisitos": ["42533", "42541"]
+        },
+        {
+          "codigo": "42561",
+          "nombre": "LABORATORIO DE SISTEMAS DIGITALES III",
+          "UC": 1,
+          "requisitos": ["P(42553)"]
+        },
+        {
+          "codigo": "46523",
+          "nombre": "PROCESAMIENTO DE DATOS",
+          "UC": 3,
+          "requisitos": ["96 U.C.A.", "46513", "43545"]
+        },
+        {
+          "codigo": "43554",
+          "nombre": "SISTEMAS DE CONTROL II",
+          "UC": 4,
+          "requisitos": ["43523", "43531", "43545", "45534"]
+        },
+        {
+          "codigo": "43561",
+          "nombre": "LABORATORIO DE SISTEMAS DE CONTROL II",
+          "UC": 1,
+          "requisitos": ["P(43554)"]
+        },
+        {
+          "codigo": "44513",
+          "nombre": "SISTEMAS DE SEÑALES",
+          "UC": 3,
+          "requisitos": ["11044", "96 U.C.A."]
+        },
+        {
+          "codigo": "34052",
+          "nombre": "ELEMENTOS DE ECONOMIA",
+          "UC": 2,
+          "requisitos": ["100 U.C.A."]
+        },
+        {
+          "codigo": "21032",
+          "nombre": "INGLES III",
+          "UC": 2,
+          "requisitos": ["97 U.C.A.", "21022"]
+        },
+        {
+          "codigo": "24022",
+          "nombre": "PROBLEMÁTICA DEL DESARROLLO SOCIAL Y ECONOMICO",
+          "UC": 2,
+          "requisitos": ["22022", "96 U.C.A."]
+        }
       ]
     },
     "semestre_8": {
       "total_uc": 20,
       "materias": [
-        { "codigo": "43573", "nombre": "SISTEMAS DE CONTROL III", "UC": 3, "requisitos": ["43554", "43561", "42533"] },
-        { "codigo": "43581", "nombre": "LABORATORIO SISTEMAS DE CONTROL III", "UC": 1, "requisitos": ["P(43573)"] },
-        { "codigo": "44023", "nombre": "SISTEMAS DE COMUNICACIONES", "UC": 3, "requisitos": ["44513"] },
-        { "codigo": "44031", "nombre": "LABORATORIO DE SISTEMAS DE COMUNICACIONES", "UC": 1, "requisitos": ["P(44023)"] },
-        { "codigo": "33113", "nombre": "INVESTIGACIÓN DE OPERACIONES", "UC": 3, "requisitos": ["33103", "34052", "43545"] },
-        { "codigo": "24032", "nombre": "PROBLEMÁTICA CONTEMPORÁNEA DE LA CIENCIA Y LA TECNOLOGIA", "UC": 2, "requisitos": ["24022"] },
-        { "codigo": null, "nombre": "DEPORTES II", "UC": 1, "requisitos": ["DEPORTES I"] },
+        {
+          "codigo": "43573",
+          "nombre": "SISTEMAS DE CONTROL III",
+          "UC": 3,
+          "requisitos": ["43554", "43561", "42533"]
+        },
+        {
+          "codigo": "43581",
+          "nombre": "LABORATORIO DE SISTEMAS DE CONTROL III",
+          "UC": 1,
+          "requisitos": ["P(43573)"]
+        },
+        {
+          "codigo": "44023",
+          "nombre": "SISTEMAS DE COMUNICACIONES",
+          "UC": 3,
+          "requisitos": ["44513"]
+        },
+        {
+          "codigo": "44031",
+          "nombre": "LABORATORIO DE SISTEMAS DE COMUNICACIONES",
+          "UC": 1,
+          "requisitos": ["P(44023)"]
+        },
+        {
+          "codigo": "33113",
+          "nombre": "INVESTIGACIÓN DE OPERACIONES",
+          "UC": 3,
+          "requisitos": ["33103", "34052", "43545"]
+        },
+        {
+          "codigo": "24032",
+          "nombre": "PROBLEMÁTICA CONTEMPORÁNEA DE LA CIENCIA Y LA TECNOLOGIA",
+          "UC": 2,
+          "requisitos": ["24022"]
+        },
+        {
+          "codigo": null,
+          "nombre": "DEPORTES II",
+          "UC": 1,
+          "requisitos": ["DEPORTES I"]
+        },
         { "nombre": "ELECTIVA", "UC": 3, "requisitos": null },
         { "nombre": "ELECTIVA", "UC": 3, "requisitos": null }
       ]
@@ -107,11 +407,36 @@
     "semestre_9": {
       "total_uc": 21,
       "materias": [
-        { "codigo": "31113", "nombre": "PRODUCCIÓN", "UC": 3, "requisitos": ["33113"] },
-        { "codigo": "44043", "nombre": "TRANSMISIÓN DE DATOS", "UC": 3, "requisitos": ["44023", "44031"] },
-        { "codigo": "43592", "nombre": "PROYECTOS INDUSTRIALES", "UC": 2, "requisitos": ["42553", "43573", "44023", "45553"] },
-        { "codigo": "24012", "nombre": "ESTUDIO Y COMPRENSIÓN DEL HOMBRE", "UC": 2, "requisitos": ["24032"] },
-        { "codigo": "32152", "nombre": "DERECHO PARA INGENIEROS", "UC": 2, "requisitos": ["150 U.C.A."] },
+        {
+          "codigo": "31113",
+          "nombre": "PRODUCCIÓN",
+          "UC": 3,
+          "requisitos": ["33113"]
+        },
+        {
+          "codigo": "44043",
+          "nombre": "TRANSMISIÓN DE DATOS",
+          "UC": 3,
+          "requisitos": ["44023", "44031"]
+        },
+        {
+          "codigo": "43592",
+          "nombre": "PROYECTOS INDUSTRIALES",
+          "UC": 2,
+          "requisitos": ["42553", "43573", "44023", "45553"]
+        },
+        {
+          "codigo": "24012",
+          "nombre": "ESTUDIO Y COMPRENSIÓN DEL HOMBRE",
+          "UC": 2,
+          "requisitos": ["24032"]
+        },
+        {
+          "codigo": "32152",
+          "nombre": "DERECHO PARA INGENIEROS",
+          "UC": 2,
+          "requisitos": ["150 U.C.A."]
+        },
         { "nombre": "ELECTIVA", "UC": 3, "requisitos": null },
         { "nombre": "ELECTIVA", "UC": 3, "requisitos": null },
         { "nombre": "ELECTIVA", "UC": 3, "requisitos": null }
@@ -120,7 +445,12 @@
     "semestre_10": {
       "total_uc": 30,
       "materias": [
-        { "codigo": "74130", "nombre": "ENTRENAMIENTO INDUSTRIAL DE SISTEMAS", "UC": 30, "requisitos": ["178 U.C.A."] }
+        {
+          "codigo": "74130",
+          "nombre": "ENTRENAMIENTO INDUSTRIAL DE SISTEMAS",
+          "UC": 30,
+          "requisitos": ["178 U.C.A."]
+        }
       ]
     }
   }
