@@ -11,6 +11,8 @@
     "preview": "vite preview",
     "deploy": "vite build && gh-pages -d dist"
   },
+  "author": "Luis Guerra",
+  "license": "MIT",
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
