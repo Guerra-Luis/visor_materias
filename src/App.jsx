@@ -1,5 +1,6 @@
 import './App.css'
 import { CareerGraph } from './components/CareerGraph'
+import { Footer } from './components/Footer'
 import { PensumProvider, usePensum } from './context/PensumContext'
 import { pensum_completo } from './data/pensum.json'
 
@@ -33,6 +34,7 @@ function App() {
       <h2>Materias aprobadas: {aproveSubjects} / {totalSubjects} </h2>
 
       <CareerGraph data={pensumData} />
+      <Footer />
     </>
   )
 }
