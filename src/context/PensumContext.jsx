@@ -42,6 +42,13 @@ export function PensumProvider({ children, pensumData }) {
     return totalCredits
   }
 
+  const getApprovedSubjects = () => {
+    return Object
+      .values(subjectStates)
+      .filter(s => s === SUBJECT_STATES.PASSED)
+      .length
+  }
+
   const isRequirementMet = (requirement) => {
     if (!requirement) return true
 
@@ -103,6 +110,7 @@ export function PensumProvider({ children, pensumData }) {
     getSubjectState,
     setSubjectState,
     getApprovedCredits,
+    getApprovedSubjects,
   }
 
   return (

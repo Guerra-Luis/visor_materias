@@ -6,7 +6,7 @@ import { pensum_completo } from './data/pensum.json'
 
 function App() {
   const pensumData = pensum_completo
-  const { getApprovedCredits } = usePensum()
+  const { getApprovedCredits, getApprovedSubjects } = usePensum()
 
 
   const totalCredits = Object
@@ -25,7 +25,7 @@ function App() {
 
 
   let aproveCredits = getApprovedCredits()
-  let aproveSubjects = 0
+  let aproveSubjects = getApprovedSubjects()
 
   return (
     <>
