@@ -24,7 +24,7 @@
           {"codigo": "21022","nombre": "INGLES II","UC": 2,"requisitos": ["21012"]},
           {"codigo": "14022","nombre": "DIBUJO II","UC": 2,"requisitos": ["14012"]},
           {"codigo": "22022","nombre": "LENGUAJE Y COMUNICACIÓN II","UC": 2,"requisitos": ["22012"]},
-          {"codigo": null,"nombre": "DEPORTES I","UC": 1,"requisitos": ["26211"]}
+          {"nombre": "DEPORTES I","UC": 1,"requisitos": ["26211"]}
         ]
       },
       "semestre_3": {
@@ -100,9 +100,9 @@
           {"codigo": "44031","nombre": "LABORATORIO DE SISTEMAS DE COMUNICACIONES","UC": 1,"requisitos": ["P(44023)"]},
           {"codigo": "33113","nombre": "INVESTIGACIÓN DE OPERACIONES","UC": 3,"requisitos": ["33103", "34052", "43545"]},
           {"codigo": "24032","nombre": "PROBLEMÁTICA CONTEMPORÁNEA DE LA CIENCIA Y LA TECNOLOGIA","UC": 2,"requisitos": ["24022"]},
-          {"codigo": null,"nombre": "DEPORTES II","UC": 1,"requisitos": ["DEPORTES I"]},
-          {"nombre": "ELECTIVA", "UC": 3, "requisitos": null },
-          {"nombre": "ELECTIVA", "UC": 3, "requisitos": null }
+          {"nombre": "DEPORTES II","UC": 1,"requisitos": ["DEPORTES I"]},
+          {"nombre": "ELECTIVA_1", "UC": 3, "requisitos": null },
+          {"nombre": "ELECTIVA_2", "UC": 3, "requisitos": null }
         ]
       },
       "semestre_9": {
@@ -113,9 +113,9 @@
           {"codigo": "43592","nombre": "PROYECTOS INDUSTRIALES","UC": 2,"requisitos": ["42553", "43573", "44023", "45553"]},
           {"codigo": "24012","nombre": "ESTUDIO Y COMPRENSIÓN DEL HOMBRE","UC": 2,"requisitos": ["24032"]},
           {"codigo": "32152","nombre": "DERECHO PARA INGENIEROS","UC": 2,"requisitos": ["150 U.C.A."]},
-          {"nombre": "ELECTIVA", "UC": 3, "requisitos": null },
-          {"nombre": "ELECTIVA", "UC": 3, "requisitos": null },
-          {"nombre": "ELECTIVA", "UC": 3, "requisitos": null }
+          {"nombre": "ELECTIVA_3", "UC": 3, "requisitos": null },
+          {"nombre": "ELECTIVA_4", "UC": 3, "requisitos": null },
+          {"nombre": "ELECTIVA_5", "UC": 3, "requisitos": null }
         ]
       },
       "semestre_10": {
@@ -155,13 +155,13 @@
       "materias": [
         { "codigo": "26211", "nombre": "EDUCACIÓN FISICA DE BASE" },
         { "codigo": "26071", "nombre": "VOLEIBOL I" },
-        { "codigo": "26081", "nombre": "VOLEIBOL II" },
+        { "codigo": "26081", "nombre": "VOLEIBOL II", "requisitos": ["26071"] },
         { "codigo": "26011", "nombre": "BASQUET I" },
-        { "codigo": "26021", "nombre": "BASQUET II" },
+        { "codigo": "26021", "nombre": "BASQUET II", "requisitos": ["26011"]  },
         { "codigo": "26101", "nombre": "BÉISBOL I" },
-        { "codigo": "26111", "nombre": "BÉISBOL II" },
+        { "codigo": "26111", "nombre": "BÉISBOL II", "requisitos": ["26101"] },
         { "codigo": "26041", "nombre": "FÚTBOL I" },
-        { "codigo": "26051", "nombre": "FÚTBOL II" }
+        { "codigo": "26051", "nombre": "FÚTBOL II", "requisitos": ["26041"] }
       ]
     }
   }

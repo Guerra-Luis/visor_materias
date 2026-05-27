@@ -11,19 +11,56 @@ export function PensumProvider({ children, pensumData }) {
     return saved || {}
   })
 
-  const subjectsByCode = useMemo(() => {
+  const {
+    subjectsByCode,
+    electiveSubjects,
+    sportSubjects,
+    selectionSubjects,
+  } = useMemo(() => {
     const subjectsMap = {}
+    const selectionSubjects = {}
+    const electives = []
+    const sports = []
 
     if (pensumData) {
+      // Materias regulares por semestre
       Object.values(pensumData['semestres']).forEach(semester => {
         semester['materias'].forEach(subject => {
           if (subject.codigo) {
-            subjectsMap[subject.codigo] = subject
+            subjectsMap[subject.codigo] = { ...subject, tipo: 'regular' }
+          } else {
+            selectionSubjects[subject.nombre] = { subject }
           }
         })
       })
+      // Asiganturas de deporte
+      if (pensumData['seccion_de_deportes']?.materias) {
+        pensumData['seccion_de_deportes'].materias.forEach(subject => {
+          if (subject.codigo) {
+            subjectsMap[subject.codigo] = { ...subject, UC: 1, tipo: 'deporte' }
+            sports.push(subject.codigo)
+          }
+        })
+      }
+
+      //Asignaturas electivas
+      if (pensumData['asignaturas_electivas']) {
+        Object.values(pensumData['asignaturas_electivas']).forEach(departamentSubjects => {
+          departamentSubjects.forEach(subject => {
+            if (subject.codigo) {
+              subjectsMap[subject.codigo] = { ...subject, tipo: 'electiva' }
+              electives.push(subject.codigo)
+            }
+          })
+        })
+      }
     }
-    return subjectsMap
+    return {
+      subjectsByCode: subjectsMap,
+      electiveSubjects: electives,
+      sportSubjects: sports,
+      selectionSubjects,
+    }
   }, [pensumData])
 
   useEffect(() => {
@@ -31,6 +68,10 @@ export function PensumProvider({ children, pensumData }) {
       saveSubjectStates(subjectStates)
     }
   }, [subjectStates])
+
+  const getSubjectByCode = (code) => {
+    return subjectsByCode[code]
+  }
 
   const getApprovedCredits = () => {
     let totalCredits = 0
@@ -105,12 +146,36 @@ export function PensumProvider({ children, pensumData }) {
 
   }
 
+  const getSportSubjects = () => {
+    return sportSubjects
+  }
+
+  const getElectiveSubjects = () => {
+    return electiveSubjects
+  }
+
+  const getSelectionSubjects = () => {
+    return selectionSubjects
+  }
+
+  /* const isSportSubject = (code) => {
+    return sportSubjects.includes(code)
+  }
+
+  const isElectiveSubject = (code) => {
+    return electiveSubjects.includes(code)
+  } */
+
   const value = {
     subjectStates,
     getSubjectState,
     setSubjectState,
     getApprovedCredits,
     getApprovedSubjects,
+    getSubjectByCode,
+    getSportSubjects,
+    getElectiveSubjects,
+    getSelectionSubjects,
   }
 
   return (
