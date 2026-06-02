@@ -1,6 +1,6 @@
 import { useContext, createContext, useState, useMemo } from 'react'
 import { SUBJECT_STATES } from '../constants/subjectStates'
-import { loadSubjectStates, saveSubjectStates } from '../utils/storage'
+import { loadSelectionStates, loadSubjectStates, saveSelectionStates, saveSubjectStates } from '../utils/storage'
 import { useEffect } from 'react'
 
 const PensumContext = createContext()
@@ -11,14 +11,17 @@ export function PensumProvider({ children, pensumData }) {
     return saved || {}
   })
 
+  const [selectionSubjects, setSelectionSubjects] = useState(() => {
+    const saved = loadSelectionStates() || {}
+    return saved
+  })
+
   const {
     subjectsByCode,
     electiveSubjects,
     sportSubjects,
-    selectionSubjects,
   } = useMemo(() => {
     const subjectsMap = {}
-    const selectionSubjects = {}
     const electives = []
     const sports = []
 
@@ -28,8 +31,6 @@ export function PensumProvider({ children, pensumData }) {
         semester['materias'].forEach(subject => {
           if (subject.codigo) {
             subjectsMap[subject.codigo] = { ...subject, tipo: 'regular' }
-          } else {
-            selectionSubjects[subject.nombre] = { subject }
           }
         })
       })
@@ -59,9 +60,40 @@ export function PensumProvider({ children, pensumData }) {
       subjectsByCode: subjectsMap,
       electiveSubjects: electives,
       sportSubjects: sports,
-      selectionSubjects,
     }
   }, [pensumData])
+
+  useEffect(() => {
+    const noCodeSubjects = {}
+    if (!pensumData) return
+
+    Object.values(pensumData['semestres']).forEach(semester => {
+      semester['materias'].forEach(subject => {
+        if (!subject.codigo) {
+          noCodeSubjects[subject.nombre] = undefined
+        }
+      })
+    })
+
+    setSelectionSubjects(prevSelection => {
+      const updatedState = { ...prevSelection }
+
+      Object.keys(noCodeSubjects).forEach(nameSubject => {
+        if (updatedState[nameSubject] === undefined) {
+          updatedState[nameSubject] = undefined
+        }
+      })
+
+      return updatedState
+    })
+
+  }, [pensumData, setSelectionSubjects])
+
+  useEffect(() => {
+    if (Object.keys(selectionSubjects).length > 0) {
+      saveSelectionStates(selectionSubjects)
+    }
+  }, [selectionSubjects])
 
   useEffect(() => {
     if (Object.keys(subjectStates).length > 0) {
@@ -154,8 +186,8 @@ export function PensumProvider({ children, pensumData }) {
     return electiveSubjects
   }
 
-  const getSelectionSubjects = () => {
-    return selectionSubjects
+  const getSelectionSubject = (name) => {
+    return selectionSubjects[name]
   }
 
   /* const isSportSubject = (code) => {
@@ -175,7 +207,9 @@ export function PensumProvider({ children, pensumData }) {
     getSubjectByCode,
     getSportSubjects,
     getElectiveSubjects,
-    getSelectionSubjects,
+    getSelectionSubject,
+    setSelectionSubjects,
+    selectionSubjects,
   }
 
   return (

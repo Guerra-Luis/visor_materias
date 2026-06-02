@@ -6,10 +6,20 @@ export function SubjectModal({ subjectData }) {
     getSubjectByCode,
     getSportSubjects,
     getElectiveSubjects,
+    setSelectionSubjects,
   } = usePensum()
 
   let subjectDataContext = undefined
   let selectionList
+
+  const handleSelectSubject = (e) => {
+    const value = e.target.value
+    const selectedCode = (value === '') ? undefined : value
+    setSelectionSubjects(prev => ({
+      ...prev,
+      [subjectData.nombre]: selectedCode
+    }))
+  }
 
   if (subjectData.codigo) {
     subjectDataContext = getSubjectByCode(subjectData.codigo)
@@ -48,13 +58,30 @@ export function SubjectModal({ subjectData }) {
             <>
               <p>Esta materia es electiva o de deportes, elige una de las siguientes materias para asignarla</p>
               <ul>
+                <li>
+                  <input
+                    type="radio"
+                    name={subjectData.nombre}
+                    className="radio"
+                    value=''
+                    onChange={handleSelectSubject}
+                    defaultChecked
+                  />
+                  <label htmlFor={subjectData.nombre}>{subjectData.nombre}</label>
+                </li>
                 {
                   selectionList.map(sub => {
                     const subName = getSubjectByCode(sub).nombre
 
                     return (
                       <li>
-                        <input type="radio" name={subjectData.nombre} className="radio" />
+                        <input
+                          type="radio"
+                          name={subjectData.nombre}
+                          className="radio"
+                          value={sub}
+                          onChange={handleSelectSubject}
+                        />
                         <label htmlFor={subjectData.nombre}>({sub}) {subName}</label>
                       </li>
                     )
