@@ -11,7 +11,10 @@ export function saveSubjectStates(states) {
 
 export function saveSelectionStates(states) {
   try {
-    localStorage.setItem(SELECTION_STORAGE_KEY, JSON.stringify(states))
+    localStorage.setItem(
+      SELECTION_STORAGE_KEY,
+      JSON.stringify(states)
+    )
   } catch (error) {
     console.error('Error guardando selecciones:', error)
   }

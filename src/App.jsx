@@ -14,7 +14,8 @@ function App() {
   )
 
   const totalSubjects = Object.values(pensumData['semestres']).reduce(
-    (sumSubjects, semester) => sumSubjects + semester['materias'].length,
+    (sumSubjects, semester) =>
+      sumSubjects + semester['materias'].length,
     0
   )
 

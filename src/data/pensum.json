@@ -4,20 +4,65 @@
       "semestre_1": {
         "total_uc": 17,
         "materias": [
-          { "codigo": "11015", "nombre": "MATEMÁTICA I", "UC": 5, "requisitos": null },
-          { "codigo": "14012", "nombre": "DIBUJO I", "UC": 2, "requisitos": null },
-          { "codigo": "21012", "nombre": "INGLES I", "UC": 2, "requisitos": null },
-          { "codigo": "13013", "nombre": "QUÍMICA", "UC": 3, "requisitos": null },
-          { "codigo": "22012", "nombre": "LENGUAJE Y COMUNICACIÓN I", "UC": 2, "requisitos": null },
-          { "codigo": "11052", "nombre": "LOGICA", "UC": 2, "requisitos": null },
-          { "codigo": "26211", "nombre": "EDUCACIÓN FÍSICA DE BASE", "UC": 1, "requisitos": null }
+          {
+            "codigo": "11015",
+            "nombre": "MATEMÁTICA I",
+            "UC": 5,
+            "requisitos": null
+          },
+          {
+            "codigo": "14012",
+            "nombre": "DIBUJO I",
+            "UC": 2,
+            "requisitos": null
+          },
+          {
+            "codigo": "21012",
+            "nombre": "INGLES I",
+            "UC": 2,
+            "requisitos": null
+          },
+          {
+            "codigo": "13013",
+            "nombre": "QUÍMICA",
+            "UC": 3,
+            "requisitos": null
+          },
+          {
+            "codigo": "22012",
+            "nombre": "LENGUAJE Y COMUNICACIÓN I",
+            "UC": 2,
+            "requisitos": null
+          },
+          {
+            "codigo": "11052",
+            "nombre": "LOGICA",
+            "UC": 2,
+            "requisitos": null
+          },
+          {
+            "codigo": "26211",
+            "nombre": "EDUCACIÓN FÍSICA DE BASE",
+            "UC": 1,
+            "requisitos": null
+          }
         ]
       },
       "semestre_2": {
         "total_uc": 20,
         "materias": [
-          { "codigo": "11025", "nombre": "MATEMÁTICA II", "UC": 5, "requisitos": ["11015"] },
-          { "codigo": "12014", "nombre": "FÍSICA I", "UC": 4, "requisitos": ["11015"] },
+          {
+            "codigo": "11025",
+            "nombre": "MATEMÁTICA II",
+            "UC": 5,
+            "requisitos": ["11015"]
+          },
+          {
+            "codigo": "12014",
+            "nombre": "FÍSICA I",
+            "UC": 4,
+            "requisitos": ["11015"]
+          },
           {
             "codigo": "12031",
             "nombre": "LABORATORIO DE FÍSICA I",
@@ -36,8 +81,18 @@
             "UC": 2,
             "requisitos": ["13013", "P(12014)"]
           },
-          { "codigo": "21022", "nombre": "INGLES II", "UC": 2, "requisitos": ["21012"] },
-          { "codigo": "14022", "nombre": "DIBUJO II", "UC": 2, "requisitos": ["14012"] },
+          {
+            "codigo": "21022",
+            "nombre": "INGLES II",
+            "UC": 2,
+            "requisitos": ["21012"]
+          },
+          {
+            "codigo": "14022",
+            "nombre": "DIBUJO II",
+            "UC": 2,
+            "requisitos": ["14012"]
+          },
           {
             "codigo": "22022",
             "nombre": "LENGUAJE Y COMUNICACIÓN II",
@@ -50,7 +105,12 @@
       "semestre_3": {
         "total_uc": 20,
         "materias": [
-          { "codigo": "11034", "nombre": "MATEMATICA III", "UC": 4, "requisitos": ["11025"] },
+          {
+            "codigo": "11034",
+            "nombre": "MATEMATICA III",
+            "UC": 4,
+            "requisitos": ["11025"]
+          },
           {
             "codigo": "12024",
             "nombre": "FÍSICA II",
@@ -92,7 +152,12 @@
       "semestre_4": {
         "total_uc": 20,
         "materias": [
-          { "codigo": "11044", "nombre": "MATEMÁTICA IV", "UC": 4, "requisitos": ["11034"] },
+          {
+            "codigo": "11044",
+            "nombre": "MATEMÁTICA IV",
+            "UC": 4,
+            "requisitos": ["11034"]
+          },
           {
             "codigo": "53014",
             "nombre": "MECANICA RACIONAL",
@@ -146,7 +211,12 @@
             "UC": 1,
             "requisitos": ["P(42513)", "46513"]
           },
-          { "codigo": "52243", "nombre": "FLUIDOS", "UC": 3, "requisitos": ["53014", "13021"] },
+          {
+            "codigo": "52243",
+            "nombre": "FLUIDOS",
+            "UC": 3,
+            "requisitos": ["53014", "13021"]
+          },
           {
             "codigo": "43514",
             "nombre": "SISTEMAS DE CONTROL I",
@@ -216,7 +286,13 @@
             "codigo": "45553",
             "nombre": "ELECTRÓNICA INDUSTRIAL",
             "UC": 3,
-            "requisitos": ["45534", "45541", "42513", "41553", "41561"]
+            "requisitos": [
+              "45534",
+              "45541",
+              "42513",
+              "41553",
+              "41561"
+            ]
           },
           {
             "codigo": "45561",
@@ -330,7 +406,11 @@
             "UC": 2,
             "requisitos": ["24022"]
           },
-          { "nombre": "DEPORTES II", "UC": 1, "requisitos": ["DEPORTES I"] },
+          {
+            "nombre": "DEPORTES II",
+            "UC": 1,
+            "requisitos": ["DEPORTES I"]
+          },
           { "nombre": "ELECTIVA_1", "UC": 3, "requisitos": null },
           { "nombre": "ELECTIVA_2", "UC": 3, "requisitos": null }
         ]
@@ -338,7 +418,12 @@
       "semestre_9": {
         "total_uc": 21,
         "materias": [
-          { "codigo": "31113", "nombre": "PRODUCCIÓN", "UC": 3, "requisitos": ["33113"] },
+          {
+            "codigo": "31113",
+            "nombre": "PRODUCCIÓN",
+            "UC": 3,
+            "requisitos": ["33113"]
+          },
           {
             "codigo": "44043",
             "nombre": "TRANSMISIÓN DE DATOS",
@@ -430,7 +515,12 @@
           "UC": 3,
           "requisitos": ["46553"]
         },
-        { "codigo": "44203", "nombre": "TELEFONIA", "UC": 3, "requisitos": ["44023", "44031"] },
+        {
+          "codigo": "44203",
+          "nombre": "TELEFONIA",
+          "UC": 3,
+          "requisitos": ["44023", "44031"]
+        },
         {
           "codigo": "41594",
           "nombre": "CANALIZACIONES",
@@ -443,8 +533,18 @@
           "UC": 3,
           "requisitos": ["42553", "42561"]
         },
-        { "codigo": "44303", "nombre": "FIBRA OPTICA", "UC": 3, "requisitos": ["44023", "44031"] },
-        { "codigo": "46573", "nombre": "BASE DE DATOS", "UC": 3, "requisitos": ["46523"] }
+        {
+          "codigo": "44303",
+          "nombre": "FIBRA OPTICA",
+          "UC": 3,
+          "requisitos": ["44023", "44031"]
+        },
+        {
+          "codigo": "46573",
+          "nombre": "BASE DE DATOS",
+          "UC": 3,
+          "requisitos": ["46523"]
+        }
       ],
       "departamento_de_industrial": [
         {
@@ -485,13 +585,29 @@
       "materias": [
         { "codigo": "26211", "nombre": "EDUCACIÓN FISICA DE BASE" },
         { "codigo": "26071", "nombre": "VOLEIBOL I" },
-        { "codigo": "26081", "nombre": "VOLEIBOL II", "requisitos": ["26071"] },
+        {
+          "codigo": "26081",
+          "nombre": "VOLEIBOL II",
+          "requisitos": ["26071"]
+        },
         { "codigo": "26011", "nombre": "BASQUET I" },
-        { "codigo": "26021", "nombre": "BASQUET II", "requisitos": ["26011"] },
+        {
+          "codigo": "26021",
+          "nombre": "BASQUET II",
+          "requisitos": ["26011"]
+        },
         { "codigo": "26101", "nombre": "BÉISBOL I" },
-        { "codigo": "26111", "nombre": "BÉISBOL II", "requisitos": ["26101"] },
+        {
+          "codigo": "26111",
+          "nombre": "BÉISBOL II",
+          "requisitos": ["26101"]
+        },
         { "codigo": "26041", "nombre": "FÚTBOL I" },
-        { "codigo": "26051", "nombre": "FÚTBOL II", "requisitos": ["26041"] }
+        {
+          "codigo": "26051",
+          "nombre": "FÚTBOL II",
+          "requisitos": ["26041"]
+        }
       ]
     }
   }

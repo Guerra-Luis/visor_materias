@@ -6,7 +6,9 @@ export function Semester({ semesterData }) {
   const subjects = semesterData[1]['materias']
   return (
     <div>
-      <h3 className="my-8">{semesterText.replace('_', ' ').toUpperCase()}</h3>
+      <h3 className="my-8">
+        {semesterText.replace('_', ' ').toUpperCase()}
+      </h3>
       <div className="flex flex-wrap gap-4 justify-center">
         {subjects.map((subject, index) => (
           <Subject subjectData={subject} key={index} />

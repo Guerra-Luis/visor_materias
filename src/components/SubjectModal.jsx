@@ -2,8 +2,12 @@ import React from 'react'
 import { usePensum } from '../context/PensumContext'
 
 export function SubjectModal({ subjectData }) {
-  const { getSubjectByCode, getSportSubjects, getElectiveSubjects, setSelectionSubjects } =
-    usePensum()
+  const {
+    getSubjectByCode,
+    getSportSubjects,
+    getElectiveSubjects,
+    setSelectionSubjects,
+  } = usePensum()
 
   let subjectDataContext = undefined
   let selectionList
@@ -36,26 +40,31 @@ export function SubjectModal({ subjectData }) {
   return (
     <dialog id={`modal_${subjectData.nombre}`} className="modal">
       <div className="modal-box flex flex-col text-left">
-        <h3 className="font-bold text-lg pb-2 text-center">{subjectData.nombre}</h3>
+        <h3 className="font-bold text-lg pb-2 text-center">
+          {subjectData.nombre}
+        </h3>
         {subjectDataContext ? (
           <>
             <p>
-              <span className="font-bold">Codigo:</span> {subjectData.codigo}
+              <span className="font-bold">Codigo:</span>{' '}
+              {subjectData.codigo}
             </p>
             <p>
-              <span className="font-bold">Unidades de credito:</span> {subjectData.UC}
+              <span className="font-bold">Unidades de credito:</span>{' '}
+              {subjectData.UC}
             </p>
             {subjectData.requisitos && (
               <p>
-                <span className="font-bold">Requisitos:</span> {subjectData.requisitos}
+                <span className="font-bold">Requisitos:</span>{' '}
+                {subjectData.requisitos}
               </p>
             )}
           </>
         ) : (
           <>
             <p>
-              Esta materia es electiva o de deportes, elige una de las siguientes materias para
-              asignarla
+              Esta materia es electiva o de deportes, elige una de las
+              siguientes materias para asignarla
             </p>
             <ul>
               <li>
@@ -67,7 +76,9 @@ export function SubjectModal({ subjectData }) {
                   onChange={handleSelectSubject}
                   defaultChecked
                 />
-                <label htmlFor={subjectData.nombre}>{subjectData.nombre}</label>
+                <label htmlFor={subjectData.nombre}>
+                  {subjectData.nombre}
+                </label>
               </li>
               {selectionList.map((sub) => {
                 const subName = getSubjectByCode(sub).nombre
