@@ -1,6 +1,11 @@
 import { useContext, createContext, useState, useMemo } from 'react'
 import { SUBJECT_STATES } from '../constants/subjectStates'
-import { loadSelectionStates, loadSubjectStates, saveSelectionStates, saveSubjectStates } from '../utils/storage'
+import {
+  loadSelectionStates,
+  loadSubjectStates,
+  saveSelectionStates,
+  saveSubjectStates,
+} from '../utils/storage'
 import { useEffect } from 'react'
 
 const PensumContext = createContext()
@@ -16,19 +21,15 @@ export function PensumProvider({ children, pensumData }) {
     return saved
   })
 
-  const {
-    subjectsByCode,
-    electiveSubjects,
-    sportSubjects,
-  } = useMemo(() => {
+  const { subjectsByCode, electiveSubjects, sportSubjects } = useMemo(() => {
     const subjectsMap = {}
     const electives = []
     const sports = []
 
     if (pensumData) {
       // Materias regulares por semestre
-      Object.values(pensumData['semestres']).forEach(semester => {
-        semester['materias'].forEach(subject => {
+      Object.values(pensumData['semestres']).forEach((semester) => {
+        semester['materias'].forEach((subject) => {
           if (subject.codigo) {
             subjectsMap[subject.codigo] = { ...subject, tipo: 'regular' }
           }
@@ -36,7 +37,7 @@ export function PensumProvider({ children, pensumData }) {
       })
       // Asiganturas de deporte
       if (pensumData['seccion_de_deportes']?.materias) {
-        pensumData['seccion_de_deportes'].materias.forEach(subject => {
+        pensumData['seccion_de_deportes'].materias.forEach((subject) => {
           if (subject.codigo) {
             subjectsMap[subject.codigo] = { ...subject, UC: 1, tipo: 'deporte' }
             sports.push(subject.codigo)
@@ -46,8 +47,8 @@ export function PensumProvider({ children, pensumData }) {
 
       //Asignaturas electivas
       if (pensumData['asignaturas_electivas']) {
-        Object.values(pensumData['asignaturas_electivas']).forEach(departamentSubjects => {
-          departamentSubjects.forEach(subject => {
+        Object.values(pensumData['asignaturas_electivas']).forEach((departamentSubjects) => {
+          departamentSubjects.forEach((subject) => {
             if (subject.codigo) {
               subjectsMap[subject.codigo] = { ...subject, tipo: 'electiva' }
               electives.push(subject.codigo)
@@ -67,18 +68,18 @@ export function PensumProvider({ children, pensumData }) {
     const noCodeSubjects = {}
     if (!pensumData) return
 
-    Object.values(pensumData['semestres']).forEach(semester => {
-      semester['materias'].forEach(subject => {
+    Object.values(pensumData['semestres']).forEach((semester) => {
+      semester['materias'].forEach((subject) => {
         if (!subject.codigo) {
           noCodeSubjects[subject.nombre] = undefined
         }
       })
     })
 
-    setSelectionSubjects(prevSelection => {
+    setSelectionSubjects((prevSelection) => {
       const updatedState = { ...prevSelection }
 
-      Object.keys(noCodeSubjects).forEach(nameSubject => {
+      Object.keys(noCodeSubjects).forEach((nameSubject) => {
         if (updatedState[nameSubject] === undefined) {
           updatedState[nameSubject] = undefined
         }
@@ -86,7 +87,6 @@ export function PensumProvider({ children, pensumData }) {
 
       return updatedState
     })
-
   }, [pensumData, setSelectionSubjects])
 
   useEffect(() => {
@@ -116,10 +116,7 @@ export function PensumProvider({ children, pensumData }) {
   }
 
   const getApprovedSubjects = () => {
-    return Object
-      .values(subjectStates)
-      .filter(s => s === SUBJECT_STATES.PASSED)
-      .length
+    return Object.values(subjectStates).filter((s) => s === SUBJECT_STATES.PASSED).length
   }
 
   const isRequirementMet = (requirement) => {
@@ -137,21 +134,21 @@ export function PensumProvider({ children, pensumData }) {
     if (parallelMatch) {
       const subjectCode = parallelMatch[1]
 
-      return (subjectStates[subjectCode] === SUBJECT_STATES.PASSED) ||
-        (subjectStates[subjectCode] === SUBJECT_STATES.IN_PROGRESS)
+      return (
+        subjectStates[subjectCode] === SUBJECT_STATES.PASSED ||
+        subjectStates[subjectCode] === SUBJECT_STATES.IN_PROGRESS
+      )
     }
 
     if (subjectsByCode[requirement]) {
       return subjectStates[requirement] === SUBJECT_STATES.PASSED
-    }
-
-    else return false
+    } else return false
   }
 
   const areRequirementMet = (subjectCode) => {
     const subject = subjectsByCode[subjectCode]
     if (!subject['requisitos'] || !subject) return true
-    return subject['requisitos'].every(req => isRequirementMet(req))
+    return subject['requisitos'].every((req) => isRequirementMet(req))
   }
 
   const getSubjectState = (subjectCode) => {
@@ -166,16 +163,14 @@ export function PensumProvider({ children, pensumData }) {
   }
 
   const setSubjectState = (subjectCode, newState) => {
-    if (newState === SUBJECT_STATES.AVAILABLE &&
-      !areRequirementMet(subjectCode)) {
+    if (newState === SUBJECT_STATES.AVAILABLE && !areRequirementMet(subjectCode)) {
       return
     }
 
-    setSubjectStates(prev => ({
+    setSubjectStates((prev) => ({
       ...prev,
-      [subjectCode]: newState
+      [subjectCode]: newState,
     }))
-
   }
 
   const getSportSubjects = () => {
@@ -212,11 +207,7 @@ export function PensumProvider({ children, pensumData }) {
     selectionSubjects,
   }
 
-  return (
-    <PensumContext.Provider value={value}>
-      {children}
-    </PensumContext.Provider>
-  )
+  return <PensumContext.Provider value={value}>{children}</PensumContext.Provider>
 }
 
 //Hook personalizado para acceder al contexto

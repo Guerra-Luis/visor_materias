@@ -8,30 +8,28 @@ function App() {
   const pensumData = pensum_completo
   const { getApprovedCredits, getApprovedSubjects } = usePensum()
 
+  const totalCredits = Object.values(pensumData['semestres']).reduce(
+    (sumCredits, semester) => sumCredits + semester['total_uc'],
+    0
+  )
 
-  const totalCredits = Object
-    .values(pensumData['semestres'])
-    .reduce((sumCredits, semester) => (
-      sumCredits + semester['total_uc']
-    ), 0)
+  const totalSubjects = Object.values(pensumData['semestres']).reduce(
+    (sumSubjects, semester) => sumSubjects + semester['materias'].length,
+    0
+  )
 
-
-  const totalSubjects = Object
-    .values(pensumData['semestres'])
-    .reduce((sumSubjects, semester) => (
-      sumSubjects + semester['materias'].length
-    ), 0)
-
-
-
-  let aproveCredits = getApprovedCredits()
-  let aproveSubjects = getApprovedSubjects()
+  const aproveCredits = getApprovedCredits()
+  const aproveSubjects = getApprovedSubjects()
 
   return (
     <>
       <h1>Progreso de la carrera</h1>
-      <h2>Creditos aprobados: {aproveCredits} / {totalCredits} </h2>
-      <h2>Materias aprobadas: {aproveSubjects} / {totalSubjects} </h2>
+      <h2>
+        Creditos aprobados: {aproveCredits} / {totalCredits}{' '}
+      </h2>
+      <h2>
+        Materias aprobadas: {aproveSubjects} / {totalSubjects}{' '}
+      </h2>
 
       <CareerGraph data={pensumData} />
       <Footer />

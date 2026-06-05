@@ -10,5 +10,5 @@ createRoot(document.getElementById('root')).render(
     <PensumProvider pensumData={pensum_completo}>
       <App />
     </PensumProvider>
-  </StrictMode>,
+  </StrictMode>
 )
