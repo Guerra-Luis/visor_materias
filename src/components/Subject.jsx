@@ -45,7 +45,7 @@ export function Subject({ subjectData }) {
   return (
     <>
       <div
-        className={`rounded-lg w-64 p-3 border-2 cursor-pointer inline-block
+        className={`rounded-lg w-48 sm:w-64 p-3 border-2 cursor-pointer inline-block
           ${styles.bg} ${styles.border} ${styles.text}
         `}
         onClick={(e) => handleClickSubject(e)}
@@ -71,11 +71,21 @@ export function Subject({ subjectData }) {
             </svg>
           </button>
         </div>
-        <span className="h-[3em] my-2 flex items-center justify-center font-semibold">
-          {subject['nombre']
-            .replace('LABORATORIO DE ', 'LAB. ')
-            .replace('PROBLEMÁTICA ', 'PROB. ')}
-        </span>
+        <div className="my-2 min-h-[3em] flex items-center">
+          <div
+            className="w-full text-center font-semibold"
+            style={{
+              display: '-webkit-box',
+              WebkitBoxOrient: 'vertical',
+              WebkitLineClamp: 2,
+              overflow: 'hidden',
+            }}
+          >
+            {subject['nombre']
+              .replace('LABORATORIO DE ', 'LAB. ')
+              .replace('PROBLEMÁTICA ', 'PROB. ')}
+          </div>
+        </div>
         <span className="text-sm text-gray-500">
           ({subject['codigo']})
         </span>
