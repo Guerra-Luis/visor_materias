@@ -205,14 +205,6 @@ export function PensumProvider({ children, pensumData }) {
     return selectionSubjects[name]
   }
 
-  /* const isSportSubject = (code) => {
-    return sportSubjects.includes(code)
-  }
-
-  const isElectiveSubject = (code) => {
-    return electiveSubjects.includes(code)
-  } */
-
   const value = {
     subjectStates,
     getSubjectState,

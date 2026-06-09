@@ -81,7 +81,10 @@ export function Subject({ subjectData }) {
         </span>
       </div>
 
-      <SubjectModal subjectData={subjectData} />
+      <SubjectModal
+        subjectData={subjectData}
+        selectedSubject={subject}
+      />
     </>
   )
 }

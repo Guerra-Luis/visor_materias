@@ -1,12 +1,14 @@
 import React from 'react'
 import { usePensum } from '../context/PensumContext'
+import { SUBJECT_STATES } from '../constants/subjectStates'
 
-export function SubjectModal({ subjectData }) {
+export function SubjectModal({ subjectData, selectedSubject }) {
   const {
     getSubjectByCode,
     getSportSubjects,
     getElectiveSubjects,
     setSelectionSubjects,
+    setSubjectState,
   } = usePensum()
 
   let subjectDataContext = undefined
@@ -14,6 +16,9 @@ export function SubjectModal({ subjectData }) {
 
   const handleSelectSubject = (e) => {
     const value = e.target.value
+    const previusValue = selectedSubject.codigo
+    setSubjectState(previusValue, SUBJECT_STATES.AVAILABLE)
+
     const selectedCode = value === '' ? undefined : value
     setSelectionSubjects((prev) => ({
       ...prev,
